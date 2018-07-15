@@ -2,7 +2,7 @@
 
 **I have milestones to make this blog ready**
 
-<del> Connect mysql db and show posts from the db </db>
+* <del> Connect mysql db and show posts from the db </db>
 * Create a post page
 * Add a delete post option
 * Add an update post button
