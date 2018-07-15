@@ -1,5 +1,6 @@
 <?php 
 $title;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +20,7 @@ $title;
 <!-- The Navigation bar -->
 <?php
 include 'nav.php';
+
 
 ?>
 <!-- Main jumbotron for a primary marketing message or call to action -->

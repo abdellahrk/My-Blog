@@ -1,6 +1,6 @@
 <?php
 $title = 'Home';
-
+require 'querydb.php';
 include 'head/header.php';
 ?>
 
@@ -19,10 +19,22 @@ include 'head/header.php';
       
     </div>
    
-     
-
+   
         <!-- Example row of columns -->
         <div class="row">
+          <?php foreach ($posts as $post): ?>
+
+
+          <div class="col-md-4">
+            <h3> <?php echo $post->title; ?> </h3>
+            <p> <?php echo $post->content; ?> </p>
+            <p><a class="ui primary basic button read_more" href="#" role="button">Read More &raquo;</a></p>
+           
+            <span>author: <?php echo $post->author; ?> </span>
+          </div>
+
+          <?php endforeach; ?>
+        <!--
           <div class="col-md-4">
             <h3>Projects</h3>
             <p>GitHub the medium of software collaboration is one place I really enjoy when I pull and push codes
@@ -43,6 +55,8 @@ include 'head/header.php';
             <p>Sample posts contents </p>
             <p><a class="ui primary basic button" href="#" role="button">Read More &raquo;</a></p>
           </div>
+
+          -->
         </div>
 
         <hr>
