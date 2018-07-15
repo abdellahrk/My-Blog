@@ -1,4 +1,4 @@
-#This is my personal blog written in PHP and 3 web technologies.
+# This is my personal blog written in PHP and 3 web technologies.
 
 **I have milestones to make this blog ready**
 
