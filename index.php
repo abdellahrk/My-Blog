@@ -1,6 +1,5 @@
 <?php
 $title = 'Home';
-require 'querydb.php';
 include 'head/header.php';
 ?>
 
