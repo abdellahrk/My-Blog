@@ -13,7 +13,7 @@ try{
 } catch(PDOException $e){
     echo "could not connect to the db " . $e->getMessage(); 
 }
-$statement = $pdo->prepare('SELECT * FROM posts');
+$statement = $pdo->prepare('SELECT * FROM posts ORDER BY id DESC');
 $statement->execute();
 $posts = $statement->fetchAll(PDO::FETCH_CLASS, 'Posts');
 
