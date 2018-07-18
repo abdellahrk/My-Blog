@@ -1,6 +1,7 @@
 <?php
 $title = 'Home';
 include 'head/header.php';
+require 'querydb.php';
 ?>
 
 </div>
@@ -21,19 +22,42 @@ include 'head/header.php';
    
         <!-- Example row of columns -->
         <div class="row">
+        <?php $i = 1; ?>
           <?php foreach ($posts as $post): ?>
+          <div class="col-md-4">
 
+        <div class="ui card">
+          <div class="content">
+            <div class="header"><a href="post.view.php?id=<?php echo $post->id;?>"><?php echo $post->title; ?></a></div>
+            <div class="meta"><?php echo $post->date; ?></div>
+            <div class="description">
+              <p><?php echo $post->content; ?></p>
+            </div>
+          </div>
+          <div class="extra content">
+            <p><a class="ui teal icon button read_more" href="post.view.php?id=<?php echo $post->id;?>" role="button">Read More &raquo;</a></p>
+          </div>
+        </div>
+        </div>
+        <?php if($i++ == 3) break;?>
+          <?php endforeach; ?>
+        </div>
+
+<!--
+        <div class="row">
+     //   <?php $i = 1; ?>
+       //   <?php foreach ($posts as $post): ?>
 
           <div class="col-md-4">
-            <h3> <?php echo $post->title; ?> </h3>
+            <h3>// <?php echo $post->title; ?> </h3>
             <p> <?php echo $post->content; ?> </p>
             <p><a class="ui primary basic button read_more" href="#" role="button">Read More &raquo;</a></p>
            
             <span>author: <?php echo $post->author; ?> </span>
           </div>
-
+          <?php if($i++ == 3) break;?>
           <?php endforeach; ?>
-        <!--
+        
           <div class="col-md-4">
             <h3>Projects</h3>
             <p>GitHub the medium of software collaboration is one place I really enjoy when I pull and push codes
@@ -57,8 +81,6 @@ include 'head/header.php';
 
           -->
         </div>
-
-        <hr>
 
       </div> <!-- /container -->
 

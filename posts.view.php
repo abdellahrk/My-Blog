@@ -2,27 +2,48 @@
 $title = 'Posts';
 
 require 'head/header.php';
-
-require 'footer.php';
+require 'connect_db.php';
+require 'Posts.php';
 
 ?>
 
+<?php 
+  $statement = $pdo->prepare('SELECT * FROM posts ORDER BY id DESC');
+  $statement->execute();
+  $all_posts = $statement->fetchAll(PDO::FETCH_CLASS, 'Posts');
+
+?>
 <div class="container">
-<div class="row">
-          <?php foreach ($posts as $post): ?>
 
+  <?php foreach ($all_posts as $post): ?>
 
-          <div class="col-md-4">
-            <h3> <?php echo $post->title; ?> </h3>
-            <p> <?php echo $post->content; ?> </p>
-            <p><a class="ui primary basic button read_more" href="#" role="button">Read More &raquo;</a></p>
+  <div class="ui very relaxed items">
+    <div class="item">
+        <div class="image">
+          <img src="/images/wireframe/image.png">
+        </div>
+        <div class="content">
+          <h3 class="ui header"> <a  href="post.view.php?id=<?php echo $post->id;?>"><?php echo $post->title; ?></a> </h3>
+          <div class="description">
+            <p> <?php echo substr($post->content, 0, 200); ?> </p>
+
            
-            <span>author: <?php echo $post->author; ?> </span>
+              <div class="ui two column middle aligned very relaxed stackable grid">
+                <div class="column">
+                  <p><a class="ui teal icon button read_more" href="post.view.php?id=<?php echo $post->id;?>" role="button">Read More &raquo;</a></p>    
+                </div>
+                <div class="center aligned column">Posted: <?php echo $post->date; ?> </div>
+              </div>
+            
+
           </div>
+        </div>
+    </div>
 
-          <?php endforeach; ?>
-
-</div>
-   
+    <?php endforeach; ?>
     
 </div>
+
+
+<?php 
+require 'footer.php'; 

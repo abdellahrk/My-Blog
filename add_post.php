@@ -1,5 +1,7 @@
 <?php
 $title = 'Add Post';
+
+require 'connect_db.php';
 require 'head/header.php';
 ?>
 <div class="ui two column centered grid">
@@ -17,9 +19,11 @@ require 'head/header.php';
         </div>
         <input class="ui submit button" type="submit" value="submit" name="submit">
     </form>
+<!-- TODO: add success message on succesful form submission. -->
+    
 </div>
         
-    </div>
+</div>
 </div>
 
 <?php
@@ -37,9 +41,9 @@ if(isset($_POST['submit'])){
     VALUES('".$_POST["title"]."', '".$_POST["content"]."') "; 
 
     if($pdo->query($sql)){
-        
-        echo "<script type= 'text/javascript'>alert('New Record Inserted Successfully');</script>";
-        header('location: add_post.php');
+        //$success = '<div class="ui green message">Green</div>';
+        //echo "<script type= 'text/javascript'>alert('New Record Inserted Successfully');</script>";
+        header('location: posts.view.php');
     } else{
         echo "<script type= 'text/javascript'>alert('Not Successful');</script>";
     }

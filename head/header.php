@@ -1,7 +1,6 @@
 <?php 
 $title;
 
-require 'querydb.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
