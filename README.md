@@ -8,3 +8,9 @@
 * Add a delete post option
 * Add an update post button
 * Add a blog post page 
+* Sign up
+* Log in
+* PWA
+* Refactoring
+
+*You can clone the project and just create a blog in your database with a posts table if you'll like to use the same template and just add your database info in a file and include it.*
