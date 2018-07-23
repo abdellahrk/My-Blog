@@ -30,7 +30,7 @@ require '../Posts.php';
            
               <div class="ui two column middle aligned very relaxed stackable grid">
                 <div class="column">
-                  <p><a class="ui teal icon button read_more" href="views.post.view.php?id=<?php echo $post->id;?>" role="button">Read More &raquo;</a></p>    
+                  <p><a class="ui teal icon button read_more" href="post.view.php?id=<?php echo $post->id;?>" role="button">Read More &raquo;</a></p>    
                 </div>
                 <div class="center aligned column">Posted: <?php echo $post->date; ?> </div>
               </div>

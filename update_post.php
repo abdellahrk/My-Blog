@@ -54,7 +54,7 @@ if (isset($_GET['id']) && !$_POST) {
             <?php echo htmlentities($content, ENT_COMPAT, 'utf-8');?>
             </textarea>
         </div>
-        <input class="ui teal icon button" type="submit" value="submit" name="update">
+        <input class="ui teal icon button" type="submit" value="update" name="update">
         <input name="id" type="hidden" value="<?php echo $id; ?>" > 
     </form>
     
@@ -76,7 +76,7 @@ if(isset($_POST['update'])){
 
     $stmt->execute(array($_POST['title'], $_POST['content'], $_GET['id']));
 
-    header('Location: post.view.php?id='.$_GET['id']);
+    header('Location: views/post.view.php?id='.$_GET['id']);
 
 }
 
