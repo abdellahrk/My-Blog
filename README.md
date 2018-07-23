@@ -5,8 +5,8 @@
 * <del> Connect mysql db and show posts from the db </db>
 * <del> Create an Add post page </del>
 * <del>Add a post page to view single post</del>
-* Add a delete post option
-* Add an update post button
+* <del>Add an update post button</del>
+* <del>Add a delete post option</del>
 * <del>Add a blog post page<del> 
 * Sign up
 * Log in
