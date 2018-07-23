@@ -30,7 +30,16 @@ if (isset($_GET['id']) && !$_POST) {
     <p> <?php echo htmlentities($content, ENT_COMPAT, 'utf-8');?> </p>
 
     <p>Author: <?php echo htmlentities($author, ENT_COMPAT, 'utf-8'); ?> </p>
-
+        <div class="ui two column middle aligned very relaxed stackable grid">
+            <div class="column">
+                <p><a class="ui teal icon button read_more"   
+                href="update_post.php?id=<?php echo $id;?>" role="button">Edit &raquo;</a></p>
+            </div>
+            <div class="center aligned column">
+                <p><a class="ui teal icon button read_more"   
+                href="delete_post.php?id=<?php echo $id;?>" role="button">Delete &raquo;</a></p>
+            </div>
+        </div>
     </div>
 
 </div>

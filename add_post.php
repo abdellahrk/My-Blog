@@ -35,7 +35,6 @@ require 'footer.php';
 <?php
 
 if(isset($_POST['submit'])){
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $sql = "INSERT INTO posts(title, content) 
     VALUES('".$_POST["title"]."', '".$_POST["content"]."') "; 
