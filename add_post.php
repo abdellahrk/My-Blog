@@ -17,7 +17,7 @@ require 'head/header.php';
             <label>Content</label>
             <textarea type="text" name="content"></textarea>
         </div>
-        <input class="ui submit button" type="submit" value="submit" name="submit">
+        <input class="ui teal icon button" type="submit" value="Add Post" name="submit">
     </form>
 <!-- TODO: add success message on succesful form submission. -->
     
@@ -36,9 +36,25 @@ require 'footer.php';
 
 if(isset($_POST['submit'])){
 
+    $sql = 'INSERT INTO posts (title, content, date)
+            VALUES(:title, :content, NOW())';
+
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindParam(':title', $_POST['title'], PDO::PARAM_STR);
+    $stmt->bindParam(':content', $_POST['content'], PDO::PARAM_STR);
+
+    $stmt->execute();
+    $OK->$stmt->rowCount();
+
+    if($OK){
+        header('Location: posts.view.php');
+    }
+
+
+    /*
     $sql = "INSERT INTO posts(title, content) 
     VALUES('".$_POST["title"]."', '".$_POST["content"]."') "; 
-
+    $result = 
     if($pdo->query($sql)){
         //$success = '<div class="ui green message">Green</div>';
         //echo "<script type= 'text/javascript'>alert('New Record Inserted Successfully');</script>";
@@ -46,4 +62,5 @@ if(isset($_POST['submit'])){
     } else{
         echo "<script type= 'text/javascript'>alert('Not Successful');</script>";
     }
+    */
 }
