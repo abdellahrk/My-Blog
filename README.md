@@ -7,7 +7,8 @@
 * <del>Add a post page to view single post</del>
 * <del>Add an update post button</del>
 * <del>Add a delete post option</del>
-* <del>Add a blog post page<del> 
+* <del>Add a blog post page<del>
+* Comments 
 * Sign up
 * Log in
 * PWA

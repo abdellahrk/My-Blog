@@ -2,7 +2,7 @@
 $title = 'Add Post';
 
 require 'connect_db.php';
-require 'head/header.php';
+require 'inc/header.php';
 ?>
 <div class="ui two column centered grid">
     <div class="column">
@@ -26,11 +26,6 @@ require 'head/header.php';
 </div>
 </div>
 
-<?php
-
-require 'footer.php';
-
-?>
 
 <?php
 
@@ -50,17 +45,7 @@ if(isset($_POST['submit'])){
         header('Location: posts.view.php');
     }
 
-
-    /*
-    $sql = "INSERT INTO posts(title, content) 
-    VALUES('".$_POST["title"]."', '".$_POST["content"]."') "; 
-    $result = 
-    if($pdo->query($sql)){
-        //$success = '<div class="ui green message">Green</div>';
-        //echo "<script type= 'text/javascript'>alert('New Record Inserted Successfully');</script>";
-        header('location: posts.view.php');
-    } else{
-        echo "<script type= 'text/javascript'>alert('Not Successful');</script>";
-    }
-    */
 }
+
+require 'inc/footer.php';
+

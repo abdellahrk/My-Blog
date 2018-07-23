@@ -2,7 +2,7 @@
 $title = 'Edit Post';
 
 require 'connect_db.php';
-require 'head/header.php';
+require 'inc/header.php';
 require 'Posts.php';
 /*
   $statement = $pdo->prepare("SELECT * FROM posts WHERE id='".$_GET['id']."' ");
