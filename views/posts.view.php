@@ -20,7 +20,13 @@ require '../Posts.php';
   <div class="ui very relaxed items">
     <div class="item">
         <div class="image">
-          <img src="/images/wireframe/image.png">
+          <?php
+            if($post->image == NULL){
+              echo('<img src="/images/wireframe/image.png" >');
+            } else{
+              echo "<img src='../uploads/" . $post->image . "'>";
+            }
+          ?>
         </div>
         <div class="content">
           <h3 class="ui header"> <a  href="post.view.php?id=<?php echo $post->id;?>"><?php echo $post->title; ?></a> </h3>

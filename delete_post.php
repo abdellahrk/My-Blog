@@ -1,7 +1,7 @@
 <?php 
 $title = 'Delete Post';
 require 'connect_db.php';
-require 'head/header.php';
+require 'inc/header.php';
 
 if (isset($_GET['id']) && !$_POST) {
     // prepare SQL query
@@ -30,7 +30,7 @@ if (isset($_GET['id']) && !$_POST) {
         <div class="ui negative message">
 
             <h3 class="header">Are you sure you want to delete :</h3>
-            
+
                 <h3> <?php  echo htmlentities($title, ENT_COMPAT, 'utf-8');?></h3>
                     <!-- <div class="ui two column middle aligned very relaxed stackable grid"> -->
                         <form method="post">
@@ -38,7 +38,7 @@ if (isset($_GET['id']) && !$_POST) {
                         </form>
                         <div>
                             <p><a class="ui teal icon button read_more"   
-                            href="post.view.php?id=<?php echo $id;?>" role="button">No &raquo;</a></p>   
+                            href="views/post.view.php?id=<?php echo $id;?>" role="button">No &raquo;</a></p>   
                         </div> 
               <!--  </div> -->
             
@@ -56,6 +56,6 @@ if(isset($_POST['delete'])){
 
     if($deleted){
        // echo 'Not successful';
-        header('Location: posts.view.php');
+        header('Location: views/posts.view.php');
     }
 }

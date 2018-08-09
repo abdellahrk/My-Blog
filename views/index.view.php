@@ -28,10 +28,10 @@ require 'querydb.php';
 
             <div class="ui card">
               <div class="content">
-                <div class="header"><a href="post.view.php?id=<?php echo $post->id;?>"><?php echo $post->title; ?></a></div>
+                <div class="header"><a href="views/post.view.php?id=<?php echo $post->id;?>"><?php echo $post->title; ?></a></div>
                 <div class="meta"><?php echo $post->date; ?></div>
                 <div class="description">
-                  <p><?php echo $post->content; ?></p>
+                  <p><?php echo substr($post->content,0 ,200); ?></p>
                 </div>
               </div>
               <div class="extra content">
